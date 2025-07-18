@@ -37,21 +37,21 @@ SocialConnect offre une expérience utilisateur fluide, avec des fonctionnalité
 - 🔐 **Authentification sécurisée** : Inscription, connexion pour utilisateurs, modérateurs et administrateurs
 - 👤 **Gestion de profil** : Modification des infos et de la photo de profil
 - 🤝 **Système d’amis** : Ajouter, accepter, refuser, supprimer des amis
-- 💬 **Messagerie** *(en cours)* : Communication privée entre utilisateurs
-- 📰 **Publications** *(en cours)* : Partage de contenu
-- 🛠️ **Tableau de bord admin** *(en cours)* : Gestion centralisée du réseau
+- 💬 **Messagerie** *(pas terminer)* : Communication privée entre utilisateurs
+- 📰 **Publications** *(pas terminer)* : Partage de contenu
+- 🛠️ **Tableau de bord admin** *(pas terminer)* : Gestion centralisée du réseau
 
 ## 🛠️ Technologies Utilisées
 
 - **Backend** : PHP
-- **Base de données** : MySQL/MariaDB
+- **Base de données** : MySQL/
 - **Frontend** :
   - HTML5
   - CSS3 (avec Tailwind CSS)
-  - JavaScript (ES6+)
+  - JavaScript
   - Font Awesome (icônes)
 
-## 👨‍💻 Utilisation
+
 
 ### 🔐 Connexion / Inscription
 
