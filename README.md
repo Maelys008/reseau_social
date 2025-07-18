@@ -72,3 +72,7 @@ Modérateur : momo@gmail.com
              momomomo     
 Utilisateur : bake@gmail.com    
               bake 
+
+Men res du groupe :
+MOLOKE Maëlys 
+ACAKPO Joanita 
