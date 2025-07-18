@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SocialConnect</title>
+
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="assets/css/bootstrap-icons.css">
+  <!-- Chargements uniques -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+  </style>
+
+  <script type="module" src="assets/js/auth.js"></script>
+  <script type="module" src="assets/js/index.js"></script>
+
+</head>
+
+<body>
+  <div id="app">
+    <!-- Authentification -->
+    <div id="auth-container">
+      <!-- Formulaire de connexion -->
+      <div id="login-form" class="bg-white rounded-lg shadow-lg p-8 w-full max-w-md slide-in">
+        <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-md slide-in">
+          <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-blue-600">SocialConnect</h1>
+            <p class="text-gray-600 mt-2">Connexion</p>
+          </div>
+          <!-- Formulaire Admin (caché au départ) -->
+          <form id="admin-login-form" class="space-y-4" autocomplete="off" hidden>
+            <div>
+              <label for="admin-email" class="block text-sm font-medium text-gray-700">Email (Admin)</label>
+              <input type="email" id="admin-email"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                required>
+              <div id="admin-email-error" class="text-red-500 text-xs mt-1"></div>
+            </div>
+            <div>
+              <label for="admin-password" class="block text-sm font-medium text-gray-700">Mot de passe (Admin)</label>
+              <input type="password" id="admin-password"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                required>
+              <div id="admin-password-error" class="text-red-500 text-xs mt-1"></div>
+            </div>
+            <div id="div_error" class="text-red-600 text-center text-sm mb-2"></div>
+            <div>
+              <button type="submit"
+                class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                Se connecter
+              </button>
+            </div>
+          </form>
+
+          <!-- Formulaire Moderateur (caché au départ) -->
+          <form id="moderator-login-form" class="space-y-4" autocomplete="off" hidden>
+            <div>
+              <label for="moderator-email" class="block text-sm font-medium text-gray-700">Email (moderateur)</label>
+              <input type="email" id="moderator-email"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                required>
+              <div id="moderator-email-error" class="text-red-500 text-xs mt-1"></div>
+            </div>
+            <div>
+              <label for="moderator-password" class="block text-sm font-medium text-gray-700">Mot de passe
+                (moderateur)</label>
+              <input type="password" id="moderator-password"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                required>
+              <div id="moderator-password-error" class="text-red-500 text-xs mt-1"></div>
+            </div>
+            <div id="div_error" class="text-red-600 text-center text-sm mb-2"></div>
+            <div>
+              <button type="submit"
+                class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                Se connecter
+              </button>
+            </div>
+          </form>
+
+          <!-- Formulaire Utilisateur -->
+          <form id="user-login-form" class="space-y-4" autocomplete="off">
+            <div>
+              <label for="user-email" class="block text-sm font-medium text-gray-700">Email (Utilisateur)</label>
+              <input type="email" id="user-email"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                required>
+              <div id="user-email-error" class="text-red-500 text-xs mt-1"></div>
+            </div>
+            <div>
+              <label for="user-password" class="block text-sm font-medium text-gray-700">Mot de passe
+                (Utilisateur)</label>
+              <input type="password" id="user-password"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                required>
+              <div id="user-password-error" class="text-red-500 text-xs mt-1"></div>
+            </div>
+            <div id="div_error_user" class="text-red-600 text-center text-sm mb-2"></div>
+            <div>
+              <button type="submit"
+                class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                Se connecter
+              </button>
+            </div>
+          </form>
+          <div class="mt-4 text-center">
+            <button id="forgot-password-link" class="text-sm text-blue-600 hover:underline">Mot de passe oublié
+              ?</button>
+          </div>
+          <div class="mt-6">
+            <div class="relative">
+              <div class="absolute inset-0 flex items-center">
+                <div class="w-full border-t border-gray-300"></div>
+              </div>
+              <div class="relative flex justify-center text-sm">
+                <span class="px-2 bg-white text-gray-500">ou</span>
+              </div>
+            </div>
+            <div id="createCompte" class="text-center mt-3">
+              <span class="text-muted small">Pas encore de compte ?</span>
+              <button id="compte" class="btn btn-outline-primary btn-sm rounded-pill ms-2">Creer un compte</button>
+            </div>
+            <div class="text-center mt-3">
+              <button id="btn-admin" class="btn btn-outline-primary btn-sm rounded-pill ms-2">Se connecter en tant
+                qu'administrateur</button>
+              <button id="btn-moderator" class="btn btn-outline-primary btn-sm rounded-pill ms-2">Se connecter en tant
+                que moderateur</button>
+              <button id="btn-user" class="btn btn-outline-primary btn-sm rounded-pill ms-2" hidden>Se connecter en tant
+                qu'utilisateur</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulaire d'inscription -->
+    <div id="register-form" class="bg-white rounded-lg shadow-lg p-8 w-full max-w-md slide-in" hidden>
+      <div class="text-center mb-8">
+        <h1 class="text-4xl font-bold text-blue-600">SocialConnect</h1>
+        <p class="text-gray-600 mt-2">Créez un compte pour rejoindre notre communauté</p>
+      </div>
+
+      <form id="register-form-element" class="space-y-4">
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="prenom" class="block text-sm font-medium text-gray-700">Prénom</label>
+            <input type="text" id="prenom" name="prenom"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" required>
+            <small class="text-red-600 text-sm"></small>
+          </div>
+          <div>
+            <label for="nom" class="block text-sm font-medium text-gray-700">Nom</label>
+            <input type="text" id="nom" name="nom"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" required>
+            <small class="text-red-600 text-sm"></small>
+          </div>
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" id="email" name="email"
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" required>
+          <small class="text-red-600 text-sm"></small>
+        </div>
+
+        <div>
+          <label for="mot_de_passe" class="block text-sm font-medium text-gray-700">Mot de passe</label>
+          <input type="password" id="mot_de_passe" name="mot_de_passe"
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" required>
+        </div>
+
+        <div>
+          <label for="password_confirm" class="block text-sm font-medium text-gray-700">Confirmer le mot de
+            passe</label>
+          <input type="password" id="password_confirm" name="password_confirm"
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" required>
+        </div>
+        <div>
+          <label for="photo" class="form-label">Photo de profil (optionnelle)</label>
+          <input type="file" id="photouser" accept="image/*" class="form-control rounded-pill" />
+        </div>
+
+        <div id="div_erreur" class="text-red-600 text-sm hidden">
+          <span></span>
+        </div>
+
+        <div>
+          <button type="submit"
+            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md text-white bg-green-600 hover:bg-green-700">
+            S'inscrire
+          </button>
+        </div>
+      </form>
+      <div class="mt-6 text-center">
+        <p class="text-sm text-gray-600">
+          Vous avez déjà un compte ?
+          <button id="show-login-btn" class="font-medium text-blue-600 hover:underline">Connectez-vous</button>
+        </p>
+      </div>
+    </div>
+
+    <!-- Formulaire reset mot de passe (optionnel, peut être chargé dynamiquement) -->
+    <div id="forgot-password-form" class="bg-white rounded-lg shadow-lg p-8 w-full max-w-md slide-in" hidden>
+      <!-- Formulaire demande de reset ici -->
+      <div class="text-center mb-8">
+        <h1 class="text-4xl font-bold text-blue-600">SocialConnect</h1>
+        <p class="text-gray-600 mt-2">Réinitialisation du mot de passe</p>
+      </div>
+      <form id="forgot-password-form-element" class="space-y-4">
+        <div>
+          <label for="forgot-email" class="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" id="forgot-email"
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            required>
+        </div>
+        <div>
+          <button type="submit"
+            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+            Envoyer le lien de réinitialisation
+          </button>
+        </div>
+      </form>
+      <div class="mt-6 text-center">
+        <button id="back-to-login-btn" class="text-sm text-blue-600 hover:underline">Retour à la
+          connexion</button>
+      </div>
+    </div>
+
+    <!-- Email de réinitialisation -->
+    <div class="reset-container slide-in" hidden>
+      <div class="reset-title">Réinitialisation de votre mot de passe</div>
+      <h3 style="color:#222;">Bonjour,</h3>
+      <p style="margin-bottom: 1.2rem;">Vous avez demandé à réinitialiser votre mot de passe.<br>Cliquez sur le bouton
+        ci-dessous pour créer un nouveau mot de passe :</p>
+      <button id="reset-btn">Réinitialiser mon mot de passe</button>
+      <p class="reset-footer">Si vous n'avez pas fait cette demande, ignorez cet e-mail.</p>
+      <p class="reset-footer">Merci, <br>L’équipe <span style="color:#4f8cff;">SocialConnect</span></p>
+      <button class="ignore">Ignorer</button>
+    </div>
+
+    <div class="container" hidden>
+      <!-- Formulaire de nouveau mot de passe ici -->
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+          <div class="card p-4 mt-5">
+            <h4 class="mb-3 text-center">Définir un nouveau mot de passe</h4>
+            <form id="password-form" autocomplete="off">
+              <input type="hidden" name="token" value="<?php echo htmlspecialchars($_GET['token'] ?? ''); ?>">
+              <input type="hidden" name="email" value="<?php echo htmlspecialchars($_GET['email'] ?? ''); ?>">
+              <div class="mb-3">
+                <label for="nouveau_mot_de_passe" class="form-label">Nouveau mot de passe</label>
+                <input type="password" name="nouveau_mot_de_passe" id="nouveau_mot_de_passe"
+                  class="form-control rounded-pill" placeholder="Nouveau mot de passe" required>
+              </div>
+              <div class="d-grid mb-2">
+                <button type="submit" class="btn btn-facebook rounded-pill fw-bold">Réinitialiser</button>
+              </div>
+            </form>
+            <div class="text-center mt-3">
+              <button class="btn btn-outline-primary rounded-pill" id="retour">Retour à la connexion</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="main-app" hidden>
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center">
+            <div class="flex-shrink-0 flex items-center">
+              <h1 class="text-2xl font-bold text-blue-600">SocialConnect</h1>
+            </div>
+            <div class="  md:ml-6 md:flex md:space-x-8">
+              <button id="nav-home"
+                class="border-b-2  text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">
+                <i class="fas fa-home mr-1"></i> Accueil
+              </button>
+              <button id="nav-friends"
+                class="border-b-2  text-gray-500 hover:text-gray-700 hover:border-gray-300 inline-flex items-center px-1 pt-1 text-sm font-medium">
+                <i class="fas fa-user-friends mr-1"></i> Amis
+              </button>
+              <button id="nav-message"
+                class="border-b-2  text-gray-500 hover:text-gray-700 hover:border-gray-300 inline-flex items-center px-1 pt-1 text-sm font-medium">
+                <i class="fas fa-user-message mr-1"></i> Messagerie
+              </button>
+              <button id="nav-profile"
+                class="border-b-2  text-gray-500 hover:text-gray-700 hover:border-gray-300 inline-flex items-center px-1 pt-1 text-sm font-medium">
+                <i class="fas fa-user-profile mr-1"></i> Profil
+              </button>
+              <button id="nav-users"
+                class="border-b-2  text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium"hidden> 
+                Utilisateurs</button>
+              <button id="nav-publications"
+                class="border-b-2  text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium"hidden>
+                Publications</button>
+
+              <button id="nav-dashboard"
+                class="border-b-2  text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium" hidden>
+                <i class="fas fa-admin-dashboard mr-1"></i> Administaration
+              </button>
+            </div>
+          </div>
+          <div class="user-info" id="info">
+
+          </div>
+
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+    </nav>
+    <div id="page-content"></div>
+  </div>
+  <!-- Modals globaux -->
+  <div id="globalModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-lg shadow-xl p-6 w-11/12 md:w-1/2 lg:w-1/3 relative" id="modal-body">
+      <button id="closeModal" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+      <div id="modal-content">
+      </div>
+    </div>
+  </div>
+
+  <div id="edit-profile-modal" class="fixed inset-0 bg-black bg-opacity-30 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-lg shadow p-6 w-full max-w-md relative">
+      <button id="close-edit-profile-modal"
+        class="absolute top-2 right-2 text-gray-500 hover:text-gray-800">&times;</button>
+      <h3 class="text-lg font-semibold mb-4">Modifier le profil</h3>
+      <form id="formEditProfile">
+        <div class="mb-4">
+          <label for="edit-prenom" class="block text-gray-700">Prénom:</label>
+          <input type="text" id="edit-prenom" name="prenom" class="w-full border rounded px-3 py-2" required>
+        </div>
+        <div class="mb-4">
+          <label for="edit-nom" class="block text-gray-700">Nom:</label>
+          <input type="text" id="edit-nom" name="nom" class="w-full border rounded px-3 py-2" required>
+        </div>
+        <div class="mb-4">
+          <label for="edit-email" class="block text-gray-700">Email:</label>
+          <input type="email" id="edit-email" name="email" class="w-full border rounded px-3 py-2" required>
+        </div>
+        <div class="text-right space-x-2">
+          <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Enregistrer</button>
+          <button type="button" id="cancel-edit-profile-modal"
+            class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Annuler</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="change-password-modal" class="fixed inset-0 bg-black bg-opacity-30 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-lg shadow p-6 w-full max-w-md relative">
+      <button id="close-change-password-modal"
+        class="absolute top-2 right-2 text-gray-500 hover:text-gray-800">&times;</button>
+      <h3 class="text-lg font-semibold mb-4">Modifier le mot de passe</h3>
+      <form id="formChangePassword">
+        <div class="mb-4">
+          <label for="current-password" class="block text-gray-700">Mot de passe actuel:</label>
+          <input type="password" id="current-password" name="current_password" class="w-full border rounded px-3 py-2"
+            required>
+        </div>
+        <div class="mb-4">
+          <label for="new-password" class="block text-gray-700">Nouveau mot de passe:</label>
+          <input type="password" id="new-password" name="new_password" class="w-full border rounded px-3 py-2" required>
+        </div>
+        <div class="mb-4">
+          <label for="confirm-new-password" class="block text-gray-700">Confirmer le nouveau mot de passe:</label>
+          <input type="password" id="confirm-new-password" name="confirm_new_password"
+            class="w-full border rounded px-3 py-2" required>
+        </div>
+        <div class="text-right space-x-2">
+          <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Changer</button>
+          <button type="button" id="cancel-change-password-modal"
+            class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Annuler</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+
+
+
+
+</body>
+
+</html>
